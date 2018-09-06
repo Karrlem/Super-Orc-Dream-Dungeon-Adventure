@@ -10,10 +10,11 @@ public class HealthScript : MonoBehaviour
 	public float cur_health = 0f;
 	public bool alive = true;
 
+	//public float amount = -50f;
+
 	// Use this for initialization
 	void Start () 
 	{
-		healthBar = GetComponent<Slider>();
 		healthBar.value = cur_health;
 		cur_health = max_health;
 		SetHealthBar ();

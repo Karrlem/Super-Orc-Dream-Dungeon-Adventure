@@ -2,11 +2,11 @@
 
 public class Potion : MonoBehaviour {
 
-	private TrackHP healthbar;
-
+	float damage = -50f;
 	// Use this for initialization
 	void Start () {
-		healthbar = GameObject.FindGameObjectWithTag ("Health").GetComponent <TrackHP> ();
+		
+		
 	}
 	
 	// Update is called once per frame
@@ -14,10 +14,9 @@ public class Potion : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter (Collider other)
+	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player") {
-			healthbar.IncreaseHealth ();
-		}
+		Debug.Log("yay");
+		other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
 	}
 }
