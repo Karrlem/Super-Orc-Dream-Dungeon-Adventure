@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3966eb1e91a95754a9bc512ab8665e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1056413534}
+  healthBar: {fileID: 0}
 --- !u!1 &1488711426
 GameObject:
   m_ObjectHideFlags: 0
