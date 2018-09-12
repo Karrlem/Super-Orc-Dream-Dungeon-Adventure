@@ -18,5 +18,6 @@ public class Potion : MonoBehaviour {
 	{
 		Debug.Log("yay");
 		other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+		Destroy(gameObject);
 	}
 }
