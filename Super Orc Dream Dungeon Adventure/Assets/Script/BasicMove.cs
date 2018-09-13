@@ -2,14 +2,14 @@
 
 public class BasicMove : MonoBehaviour {
 
-	public float speed = 50;
+	public float speed = 20;
 	private Rigidbody rb;
 
 	void Start(){
 		rb = GetComponent <Rigidbody> ();
 	}
 
-	void FixedUpdate(){
+	void Update(){
 		float hMove = Input.GetAxis ("Horizontal");
 		float vMove = Input.GetAxis ("Vertical");
 
