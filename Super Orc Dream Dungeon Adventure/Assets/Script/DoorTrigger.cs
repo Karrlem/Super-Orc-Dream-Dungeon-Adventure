@@ -9,11 +9,13 @@ public class DoorTrigger : MonoBehaviour
 
 	void OnTriggerStay()
 	{
-		door.transform.position = new Vector3(0, 8, 4);
+        //Door up Position
+		door.transform.position = new Vector3(0, 8, 14);
 		}
 		 void OnTriggerExit()
 		{
-			door.transform.position = new Vector3(0, 3, 4);
+            //Door Down position
+			door.transform.position = new Vector3(0, 3, 14);
 			Debug.Log("Down");
 		} 
 }
