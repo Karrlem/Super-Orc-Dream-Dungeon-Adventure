@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 571503896}
   - component: {fileID: 571503895}
   m_Layer: 5
-  m_Name: Image
+  m_Name: KeyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,8 +861,8 @@ GameObject:
   - component: {fileID: 956947950}
   - component: {fileID: 956947949}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: Key
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,6 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8988587f3266ac144adebe2c4fa3ef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyIcon: {fileID: 571503895}
 --- !u!54 &956947950
 Rigidbody:
   m_ObjectHideFlags: 0
