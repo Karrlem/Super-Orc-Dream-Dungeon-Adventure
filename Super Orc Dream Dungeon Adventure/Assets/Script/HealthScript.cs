@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour 
 {
 
+	//Script on player, make slider and place asset on health bar
+
 	//public Image healthBar;
 	public Slider healthBar;
 	public float max_health = 100f;

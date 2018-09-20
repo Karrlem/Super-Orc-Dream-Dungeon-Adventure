@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CollectItem : MonoBehaviour {
 
+	//Script on key or item, key icon is ui image under canvas
+	//On key collider select is trigger and check it, and freeze y position
+
 
 [SerializeField] private Image keyIcon;
 

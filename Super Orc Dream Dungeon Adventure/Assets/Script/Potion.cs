@@ -2,6 +2,8 @@
 
 public class Potion : MonoBehaviour {
 
+	//Script on Potion or healing portion
+
 	float damage = -50f;
 	// Use this for initialization
 	void Start () {

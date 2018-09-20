@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour 
 {
+
+	//Script on pressure plate and place door into gameobject door
+
 	[SerializeField]
 	GameObject door;
 

@@ -2,6 +2,8 @@
 
 public class BasicMove : MonoBehaviour {
 
+	//Place on player and add rigidbody to player
+
 	public float speed = 20;
 	private Rigidbody rb;
 

@@ -2,6 +2,8 @@
 
 public class BasicJump : MonoBehaviour {
 
+	//Place on player and add rigidbody to player
+
 	public float jump = 10;
 
 		void Update (){
