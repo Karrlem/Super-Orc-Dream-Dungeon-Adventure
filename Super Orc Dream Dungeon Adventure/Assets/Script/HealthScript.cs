@@ -1,27 +1,54 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour 
 {
 
 	//Script on player, make slider and place asset on health bar
 
-	//public Image healthBar;
+	//[SerializeField] private Image my_health;
+	//public Image fillAmount;
+//	GameObject Player;
 	public Slider healthBar;
+	
+	public string mainMenuScene;
 	public float max_health = 100f;
 	public float cur_health = 0f;
 	public bool alive = true;
 
-	//public float amount = -50f;
+	//public float amount = 50f;
+	
+	//float damage = 50f;
+
+	//public float damage = 50f;
 
 	// Use this for initialization
 	void Start () 
 	{
-		healthBar.value = cur_health;
+		healthBar = GetComponent<Slider>();
+		//my_health = GetComponent<Image>();
+		//fillAmount = GetComponent<Image>();
 		cur_health = max_health;
-		SetHealthBar ();
+		healthBar.value = CalculateHealth();
+		//SetHealthBar ();
+		//InvokeRepeating("DoDamage", 1f, 5f);
 	}
 
+	void Update (){
+		//healthBar.fillAmount = cur_health / max_health;
+		//DoDamage();
+		CalculateHealth();
+		//TakeDamage();
+		
+	}
+
+
+	/* void DoDamage(){
+		TakeDamage(50f);
+	} */
 	public void TakeDamage(float amount)
 	{
 		//checking if player is alive
@@ -34,18 +61,30 @@ public class HealthScript : MonoBehaviour
 			//kill player
 			cur_health = 0;
 			alive = false;
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+//			Destroy (Player);
+			
+			//brings to main menu. can be replaced with game over scene if wanted
+			//SceneManager.LoadScene(mainMenuScene);
 		}
+		//amount = 50f;
 		cur_health -= amount;
-		SetHealthBar ();
+		//SetHealthBar ();
+		healthBar.value = CalculateHealth();
+		
 	}
 
-	void SetHealthBar () 
+	/* void SetHealthBar () 
 	{
 	
 		float my_health = cur_health / max_health;
-		healthBar.transform.localScale = new Vector3 (Mathf.Clamp (my_health, 0f, 1f),healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+		//redGoodness.fillAmount = my_health;
+		//healthBar.transform.localScale = new Vector3 (Mathf.Clamp (my_health, 0f, 1f),healthBar.transform.localScale.y,healthBar.transform.localScale.z);
 		
 
+	} */
+
+	float CalculateHealth(){
+		return cur_health / max_health;
 	}
 }
