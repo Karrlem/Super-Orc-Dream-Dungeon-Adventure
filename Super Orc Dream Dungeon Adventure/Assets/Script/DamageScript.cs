@@ -5,7 +5,7 @@ public class DamageScript : MonoBehaviour {
 
 	//Script on Enemy
 	
-	float damage = 50f;
+	float damage;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,9 +17,12 @@ public class DamageScript : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider plyr)
 	{
+		if (plyr.gameObject.tag == "Player"){
 		Debug.Log("ouchies");
-		other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+		plyr.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+		//damage -= 10;
+		}
 	}
 }

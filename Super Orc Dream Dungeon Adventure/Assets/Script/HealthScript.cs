@@ -19,7 +19,7 @@ public class HealthScript : MonoBehaviour
 	public float cur_health = 0f;
 	public bool alive = true;
 
-	//public float amount = 50f;
+	public float amount = 50f;
 	
 	//float damage = 50f;
 
@@ -41,14 +41,14 @@ public class HealthScript : MonoBehaviour
 		//healthBar.fillAmount = cur_health / max_health;
 		//DoDamage();
 		CalculateHealth();
-		//TakeDamage();
+		//TakeDamage(50f);
 		
 	}
 
 
-	/* void DoDamage(){
+	void DoDamage(){
 		TakeDamage(50f);
-	} */
+	}
 	public void TakeDamage(float amount)
 	{
 		//checking if player is alive
@@ -71,6 +71,7 @@ public class HealthScript : MonoBehaviour
 		cur_health -= amount;
 		//SetHealthBar ();
 		healthBar.value = CalculateHealth();
+		DoDamage();
 		
 	}
 
