@@ -5,7 +5,7 @@ public class DamageScript : MonoBehaviour {
 
 	//Script on Enemy
 	
-	float damage;
+	float damage =50f;
 	// Use this for initialization
 	void Start () {
 		
