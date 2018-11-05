@@ -39,7 +39,8 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     void Die()
@@ -73,7 +74,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    //Fuction attacks enemy then enemy takes damage from the input
+    //Fucktion attacks enemy then enemy takes damage from the input
     void AttackTarget(){
         enemyStats.EnemyTakeDamage(20);
     }

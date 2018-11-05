@@ -8,13 +8,20 @@ public class EnemyController : MonoBehaviour
 
 	public float lookRadius = 10f;
 
+	
+
 	Transform target;
 	NavMeshAgent agent;
+
+	
 	// Use this for initialization
 	void Start () 
 	{
 		target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
+		//GameObject plyr = GameObject.FindGameObjectWithTag("Player");
+		
+		
 	}
 
 	void Update()
@@ -30,9 +37,11 @@ public class EnemyController : MonoBehaviour
 				//attack target
 				//face target
 				FaceTarget();
+
 			}
 		}
 	}
+	
 
 	void FaceTarget()
 	{
@@ -46,4 +55,14 @@ public class EnemyController : MonoBehaviour
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, lookRadius);
 	}
+
+	void OnCollisionExit (Collision other)
+ {
+     if (other.gameObject.tag == "Player")
+     {
+            //transform.position = Vector3.zero;
+            Vector3 position = transform.position;
+            agent.SetDestination(position);
+     }
+ }
 }
