@@ -7,31 +7,28 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth { get; private set; }
     public Stats damage;
     public Stats armor;
-    public bool canAttack = false;
+    private bool canAttack = false;
+
+    //Label enemy script
+    EnemyStats enemyStats;
+    
+
+     
 
 
     void Awake()
     {
         currentHealth = maxHealth;
+
+        //Calls enemy script
+        enemyStats = GameObject.FindWithTag ("Enemy").GetComponent<EnemyStats>();
     }
 
     void Update()
     {
 
-        /*
-        if (canAttack == true)
-        {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                Destroy(gameObject);
-            }
-        }
-        if(Input.GetKeyDown(KeyCode.T))
-		{
-			TakeDamage(10);
-		}*/
     }
-    public void TakeDamage(int damage)
+    public void PlayerTakeDamage(int damage)
     {
         damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
@@ -42,23 +39,25 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            Destroy(gameObject);
         }
     }
-    public virtual void Die()
+    void Die()
     {
         //Die in some way
         //This method is meant to be overwritten
         Debug.Log(transform.name + "Died");
+        
     }
 
-    public void CanAttack()
+    void CanAttack()
     {
         if (canAttack == true)
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
+                AttackTarget();
 
-                TakeDamage(10);
             }
         }
     }
@@ -69,8 +68,13 @@ public class CharacterStats : MonoBehaviour
         {
             CanAttack();
             canAttack = true;
-            Debug.Log("can attack");
+            //Debug.Log("can attack");
 
         }
+    }
+
+    //Fuction attacks enemy then enemy takes damage from the input
+    void AttackTarget(){
+        enemyStats.EnemyTakeDamage(20);
     }
 }
