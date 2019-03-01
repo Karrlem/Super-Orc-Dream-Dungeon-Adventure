@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: 83046fe7999a52c42ac396a7a5535ac4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bars
+    100002: Bars1
+    100004: Bars2
+    100006: Bars3
+    100008: Bars4
+    100010: Bars5
+    100012: Bars6
+    100014: //RootNode
+    100016: House
+    100018: Tusk
+    100020: Tusk1
+    100022: Tusk2
+    100024: Tusk3
+    100026: Tusk4
+    100028: Tusk5
+    400000: Bars
+    400002: Bars1
+    400004: Bars2
+    400006: Bars3
+    400008: Bars4
+    400010: Bars5
+    400012: Bars6
+    400014: //RootNode
+    400016: House
+    400018: Tusk
+    400020: Tusk1
+    400022: Tusk2
+    400024: Tusk3
+    400026: Tusk4
+    400028: Tusk5
+    2100000: lambert3
+    2100002: Tusk6
+    2100004: lambert4
+    2300000: Bars
+    2300002: Bars1
+    2300004: Bars2
+    2300006: Bars3
+    2300008: Bars4
+    2300010: Bars5
+    2300012: Bars6
+    2300014: House
+    2300016: Tusk
+    2300018: Tusk1
+    2300020: Tusk2
+    2300022: Tusk3
+    2300024: Tusk4
+    2300026: Tusk5
+    3300000: Bars
+    3300002: Bars1
+    3300004: Bars2
+    3300006: Bars3
+    3300008: Bars4
+    3300010: Bars5
+    3300012: Bars6
+    3300014: House
+    3300016: Tusk
+    3300018: Tusk1
+    3300020: Tusk2
+    3300022: Tusk3
+    3300024: Tusk4
+    3300026: Tusk5
+    4300000: House
+    4300002: Tusk
+    4300004: Tusk1
+    4300006: Tusk2
+    4300008: Tusk3
+    4300010: Tusk4
+    4300012: Tusk5
+    4300014: Bars
+    4300016: Bars1
+    4300018: Bars2
+    4300020: Bars3
+    4300022: Bars4
+    4300024: Bars5
+    4300026: Bars6
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
