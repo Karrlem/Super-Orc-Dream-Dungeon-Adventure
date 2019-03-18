@@ -30,7 +30,7 @@ public class SceneTransition : MonoBehaviour
     }
     IEnumerator LoadScene()
 	{
-		//tranisitionAnim.SetTrigger("End");
+		tranisitionAnim.SetTrigger("End");
 		yield return new WaitForSeconds(1.5f);
 		SceneManager.LoadScene(sceneName);
 	}
