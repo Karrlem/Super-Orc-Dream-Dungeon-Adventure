@@ -198,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &226960289
 AudioListener:
   m_ObjectHideFlags: 0
@@ -263,6 +263,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 46.278004, y: 0, z: 0}
+--- !u!1 &418372680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1463358298}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418372681}
+  m_Layer: 0
+  m_Name: Orc (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418372681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1463358298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418372680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1149303247}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497850638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: fb09873443ab1854d8892a2693f70148,
@@ -324,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878292005}
   m_LocalRotation: {x: 0.26462924, y: -0.44541696, z: 0.13970765, w: 0.8438347}
-  m_LocalPosition: {x: 18.816957, y: 17.976955, z: -12.160374}
+  m_LocalPosition: {x: 30.8, y: -2.88, z: -20.35}
   m_LocalScale: {x: 1.0383005, y: 1.0383, z: 1.0383005}
   m_Children: []
   m_Father: {fileID: 1149303247}
@@ -365,8 +395,8 @@ Camera:
   m_GameObject: {fileID: 878292005}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
