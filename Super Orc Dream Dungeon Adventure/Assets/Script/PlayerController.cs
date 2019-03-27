@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     //public Rigidbody theRB;
     public float jumpForce;
     public CharacterController controller;
+    private float minRotation = -90;
+    private float maxRotation = 90;
+
 
     private Vector3 moveDirection;
     public float gravityScale;
@@ -35,6 +38,11 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = moveDirection.y + Physics.gravity.y * gravityScale *Time.deltaTime;
         controller.Move(moveDirection* Time.deltaTime);
 
+        transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
+
+        Vector3 currentRotation = transform.localRotation.eulerAngles;
+        currentRotation.x = Mathf.Clamp(currentRotation.x, minRotation, maxRotation);
+        transform.localRotation = Quaternion.Euler(currentRotation);
 
         //theRB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, theRB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
         /* if(Input.GetButtonDown("Jump"))
