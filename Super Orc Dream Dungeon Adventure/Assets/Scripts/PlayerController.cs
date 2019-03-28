@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float minRotation = -90;
     private float maxRotation = 90;
 
+    private Animator m_animator;
+
 
     private Vector3 moveDirection;
     public float gravityScale;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         //theRB = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+       /* if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Attacking");
+            m_animator.SetTrigger("attack");
+        }
+        */
         moveDirection.y = moveDirection.y + Physics.gravity.y * gravityScale *Time.deltaTime;
         controller.Move(moveDirection* Time.deltaTime);
 
