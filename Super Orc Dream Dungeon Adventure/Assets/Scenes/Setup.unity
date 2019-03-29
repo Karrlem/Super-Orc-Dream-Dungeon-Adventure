@@ -502,7 +502,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5.7, y: 1, z: 7.23}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &608362790
 MeshRenderer:
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 1590147694}
   - component: {fileID: 1590147693}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 2041514676}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1352,6 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a5609dbcfa1e242bf4f117c6b51f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objToDestory: {fileID: 1590147691}
 --- !u!95 &2041514677
 Animator:
   serializedVersion: 3
@@ -1379,7 +1380,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041514674}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
