@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject playerHand;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
