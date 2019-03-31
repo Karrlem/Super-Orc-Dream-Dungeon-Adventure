@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class KillEnemy : MonoBehaviour
 {
+    //Collision to check if hit by Sword
     private void OnTriggerEnter(Collider other)
      {
          if(other.gameObject.tag == "Sword")
          {
-             Debug.Log("Attacking");
-             Destroy (gameObject);
+            Debug.Log("Killed" + name);
+             Destroy (this.gameObject);
          }
      }
-    
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
 }

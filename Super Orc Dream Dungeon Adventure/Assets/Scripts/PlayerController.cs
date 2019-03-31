@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         //theRB = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
-        m_animator = GetComponent<Animator>();
+        //m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
+                Debug.Log("Jump");
                 moveDirection.y = jumpForce;
             }
         }

@@ -6,7 +6,6 @@ public class Attack : MonoBehaviour
 {
 
     private Animator m_animator;
-    private GameObject[] myEnenmies;
     public GameObject objToDestory;
 
     // Start is called before the first frame update
@@ -18,23 +17,10 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myEnenmies = GameObject.FindGameObjectsWithTag("Enemy");
-
-
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Attacking");
+            //Debug.Log("Attacking");
             m_animator.SetTrigger("attack");
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.gameObject.tag == "Sword")
-        {
-            Debug.Log("Hit");
-            Destroy(objToDestory);
         }
     }
 }

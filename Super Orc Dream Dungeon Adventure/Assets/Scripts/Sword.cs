@@ -9,7 +9,6 @@ public class Sword : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        Debug.Log("Attacking");
     }
 
     // Update is called once per frame
@@ -18,18 +17,9 @@ public class Sword : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Attacking");
+                Debug.Log("Attack");
                 animator.SetTrigger("Base_Attack");
             }
         
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Sword")
-        {
-            Debug.Log("hi");
-            Destroy(gameObject);
-
-        }
     }
 }
