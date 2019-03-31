@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
 	public string sceneName;
     public bool enter = true;
 
+
 	// Update is called once per frame
 	void Update () 
 	{

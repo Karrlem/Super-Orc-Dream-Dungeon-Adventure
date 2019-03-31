@@ -13,12 +13,12 @@ public class DoorTrigger : MonoBehaviour
 	void OnTriggerStay()
 	{
         //Door up Position
-		door.transform.position = new Vector3(0, 8, 14);
+		door.transform.position = new Vector3(-29, 12, 20);
 		}
 		 void OnTriggerExit()
 		{
             //Door Down position
-			door.transform.position = new Vector3(0, 3, 14);
+			door.transform.position = new Vector3(-29, 6, 20);
 			Debug.Log("Down");
 		} 
 }
