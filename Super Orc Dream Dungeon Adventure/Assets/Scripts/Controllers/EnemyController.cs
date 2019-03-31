@@ -8,12 +8,9 @@ public class EnemyController : MonoBehaviour
 
 	public float lookRadius = 10f;
 
-	
-
 	Transform target;
 	NavMeshAgent agent;
 
-	
 	// Use this for initialization
 	void Start () 
 	{
