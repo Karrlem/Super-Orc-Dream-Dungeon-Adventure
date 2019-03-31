@@ -6,5 +6,8 @@ public class PlayerWeaponController : MonoBehaviour
 {
     public GameObject playerHand;
 
+    public void PerformweaponAttack()
+    {
+
     }
 }

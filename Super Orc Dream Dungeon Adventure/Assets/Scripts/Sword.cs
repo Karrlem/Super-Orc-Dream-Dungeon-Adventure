@@ -9,11 +9,27 @@ public class Sword : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        Debug.Log("Attacking");
     }
 
     // Update is called once per frame
-    public void PerformAttack()
+    private void Update()
     {
-        animator.SetTrigger("Base_Attack");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Attacking");
+                animator.SetTrigger("Base_Attack");
+            }
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Sword")
+        {
+            Debug.Log("hi");
+            Destroy(gameObject);
+
+        }
     }
 }
