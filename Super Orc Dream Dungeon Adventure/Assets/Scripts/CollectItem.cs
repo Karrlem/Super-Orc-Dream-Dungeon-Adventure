@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class CollectItem : MonoBehaviour {
 
-	//Script on key or item, key icon is ui image under canvas
-	//On key collider select is trigger and check it, and freeze y position
+    //Script on key or item, key icon is ui image under canvas
+    //On key collider select is trigger and check it, and freeze y position
+
+    public GameObject pickupEffect;
 
 
 [SerializeField] private Image keyIcon;
@@ -26,6 +28,7 @@ public class CollectItem : MonoBehaviour {
 	{
 		if (plyr.gameObject.tag == "Player"){
 		Debug.Log("key wee");
+        Instantiate(pickupEffect, transform.position, transform.rotation);
 		Destroy(gameObject);
 		keyIcon.enabled = true;
 		}

@@ -19,7 +19,9 @@ public class HealthScript : MonoBehaviour
 	public float cur_health = 0f;
 	public bool alive = true;
 
-	public float amount = 50f;
+    public GameObject Death;
+
+    public float amount = 50f;
 	
 	//float damage = 50f;
 
@@ -61,7 +63,8 @@ public class HealthScript : MonoBehaviour
 			//kill player
 			cur_health = 0;
 			alive = false;
-			gameObject.SetActive(false);
+            Instantiate(Death, transform.position, transform.rotation);
+            gameObject.SetActive(false);
 //			Destroy (Player);
 			
 			//brings to main menu. can be replaced with game over scene if wanted

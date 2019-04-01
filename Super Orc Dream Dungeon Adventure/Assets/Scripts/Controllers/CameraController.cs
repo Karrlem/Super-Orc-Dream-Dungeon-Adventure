@@ -5,8 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
+    public Transform pivot;
+
     public Vector3 offset;
     public bool useOffsetValues;
+
 
     private void Start()
     {
@@ -14,12 +17,14 @@ public class CameraController : MonoBehaviour
         { 
          offset = target.position - transform.position;
         }
+        pivot.transform.parent = null;
         //Hides the mouse cursor, press Escape to get back.
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
+        pivot.transform.position = target.transform.position;
 
         transform.position = target.position - offset;
 

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class KillEnemy : MonoBehaviour
 {
+    public GameObject Death;
     //Collision to check if hit by Sword
     private void OnTriggerEnter(Collider other)
      {
          if(other.gameObject.tag == "Sword")
          {
+            Instantiate(Death, transform.position, transform.rotation);
             Debug.Log("Killed" + name);
-             Destroy (this.gameObject);
+            Instantiate(Death, transform.position, transform.rotation);
+            Destroy (gameObject);
          }
      }
 }
