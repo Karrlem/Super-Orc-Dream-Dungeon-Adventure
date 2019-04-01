@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour
         { 
          offset = target.position - transform.position;
         }
+        //Hides the mouse cursor, press Escape to get back.
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -24,7 +26,7 @@ public class CameraController : MonoBehaviour
         transform.LookAt(target);
     }
 
-
+    //Get rid of this?
     /*
     public Transform target;
 
