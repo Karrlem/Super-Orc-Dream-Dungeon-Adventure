@@ -61,7 +61,7 @@ public class HealthScript : MonoBehaviour
 			//kill player
 			cur_health = 0;
 			alive = false;
-			//gameObject.SetActive(false);
+			gameObject.SetActive(false);
 //			Destroy (Player);
 			
 			//brings to main menu. can be replaced with game over scene if wanted
