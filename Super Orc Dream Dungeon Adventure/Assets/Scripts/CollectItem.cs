@@ -26,11 +26,11 @@ public class CollectItem : MonoBehaviour {
 //Freeze Y Poistion on collecting object
 	void OnTriggerEnter(Collider plyr)
 	{
-		if (plyr.gameObject.tag == "Player"){
-		Debug.Log("key wee");
-        Instantiate(pickupEffect, transform.position, transform.rotation);
-		Destroy(gameObject);
-		keyIcon.enabled = true;
+		if (plyr.gameObject.tag == "Player")
+        {
+            Instantiate(pickupEffect, transform.position, transform.rotation);
+		    Destroy(gameObject);
+		    keyIcon.enabled = true;
 		}
 	}
 }

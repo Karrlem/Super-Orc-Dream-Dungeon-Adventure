@@ -17,7 +17,6 @@ public class Sword : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Attack");
                 animator.SetTrigger("Base_Attack");
             }
         

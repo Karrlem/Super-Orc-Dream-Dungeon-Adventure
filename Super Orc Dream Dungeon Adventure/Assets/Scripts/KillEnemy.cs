@@ -10,10 +10,10 @@ public class KillEnemy : MonoBehaviour
      {
          if(other.gameObject.tag == "Sword")
          {
+            //Debug.Log("Killed" + name);
             Instantiate(Death, transform.position, transform.rotation);
-            Debug.Log("Killed" + name);
-            Instantiate(Death, transform.position, transform.rotation);
-            Destroy (gameObject);
-         }
+            gameObject.SetActive(false);
+            //Destroy (gameObject);
+        }
      }
 }
