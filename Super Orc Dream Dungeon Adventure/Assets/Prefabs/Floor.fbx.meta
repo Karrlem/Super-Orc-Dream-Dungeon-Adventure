@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75acc3723e18b6f4698935e34170e2a7
+guid: da7a7c4e2fbc1f546bccee983ffe1a27
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,8 +8,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Floor2
-    2186277476908879412: ImportLogs
+    4300000: Floor1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -61,7 +60,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
