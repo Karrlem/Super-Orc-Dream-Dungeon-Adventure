@@ -295,7 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 297792449}
   pivot: {fileID: 704558548}
-  offset: {x: 6.96, y: -5.99, z: 7.54}
+  offset: {x: -0.07, y: -8.14, z: 10.56}
   useOffsetValues: 1
 --- !u!1 &91668273
 GameObject:
@@ -4256,6 +4256,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114885382892678524, guid: 6118a7d94d3a3be488fa83d16a38562c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224199237463649352, guid: 6118a7d94d3a3be488fa83d16a38562c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4345,11 +4350,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114885382892678524, guid: 6118a7d94d3a3be488fa83d16a38562c,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6118a7d94d3a3be488fa83d16a38562c, type: 3}
