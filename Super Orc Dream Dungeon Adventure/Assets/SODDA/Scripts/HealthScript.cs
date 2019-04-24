@@ -34,7 +34,7 @@ public class HealthScript : MonoBehaviour
 		//my_health = GetComponent<Image>();
 		//fillAmount = GetComponent<Image>();
 		cur_health = max_health;
-		healthBar.value = CalculateHealth();
+		//healthBar.value = CalculateHealth();
 		//SetHealthBar ();
 		//InvokeRepeating("DoDamage", 1f, 5f);
 	}
