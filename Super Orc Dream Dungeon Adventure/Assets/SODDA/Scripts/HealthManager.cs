@@ -16,12 +16,18 @@ public class HealthManager : MonoBehaviour
     private float flashCounter;
     public float flashlegth = 0.1f;
 
+    private bool isRespawning;
+    private Vector3 respawnPoint;
+    public float respawnLength;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
 
-        thePlayer = FindObjectOfType<PlayerController>();
+        //thePlayer = FindObjectOfType<PlayerController>();
+
+        respawnPoint = thePlayer.transform.position;
     }
 
     // Update is called once per frame
@@ -52,14 +58,49 @@ public class HealthManager : MonoBehaviour
        
             currentHealth -= damage;
 
-            thePlayer.Knockback(direction);
+            if(currentHealth <= 0)
+            {
+                Respawn();
+            }
+                else
+                { 
 
-            invincibilityCounter = invincibilityLength;
+                    thePlayer.Knockback(direction);
 
-            playerRenderer.enabled = false;
+                    invincibilityCounter = invincibilityLength;
 
-            flashCounter = flashlegth;
+                    playerRenderer.enabled = false;
+                    
+                flashCounter = flashlegth;
+                }
+         }
+     }
+
+    public void Respawn()
+    {
+        //thePlayer.transform.position = respawnPoint;
+        //currentHealth = maxHealth;
+        if (!isRespawning)
+        {
+            StartCoroutine("RespawnCo");
         }
+    }
+        public IEnumerator RespawnCo()
+    {
+        isRespawning = true;
+        thePlayer.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(respawnLength);
+        isRespawning = false;
+
+        thePlayer.gameObject.SetActive(true);
+        thePlayer.transform.position = respawnPoint;
+        currentHealth = maxHealth;
+
+        invincibilityCounter = invincibilityLength;
+        playerRenderer.enabled = false;
+
+        flashCounter = flashlegth;
     }
 
     public void HealPlayer(int healAmount)

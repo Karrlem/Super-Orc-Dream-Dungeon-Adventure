@@ -830,7 +830,6 @@ GameObject:
   - component: {fileID: 297792446}
   - component: {fileID: 297792450}
   - component: {fileID: 297792445}
-  - component: {fileID: 297792451}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -907,25 +906,6 @@ MonoBehaviour:
   Death: {fileID: 0}
   knockBackForce: 20
   knockBackTime: 0.25
---- !u!114 &297792451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297792444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3862fdac4a4a74992084a928820137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  mainMenuScene: 
-  max_health: 100
-  cur_health: 0
-  alive: 1
-  Death: {fileID: 2923432272309000315, guid: 915ffa4ac9b308d44ae4c1d4d3400c20, type: 3}
-  amount: 50
 --- !u!1001 &303871993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3252,9 +3232,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9163b534314303b458e049021bb6092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 1
   currentHealth: 0
   thePlayer: {fileID: 297792450}
+  invincibilityLength: 1
+  playerRenderer: {fileID: 4445067}
+  flashlegth: 0.1
+  respawnLength: 2
 --- !u!114 &1468395859
 MonoBehaviour:
   m_ObjectHideFlags: 0
