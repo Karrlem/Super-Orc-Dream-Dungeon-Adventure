@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SODDA/Scenes/mainMenuScene.unity
     guid: 666cf0b019ac5c647b7d92c0c523973a
-  - enabled: 1
-    path: Assets/Scenes/7a.Transition.unity
-    guid: e3304c653e9689c46a76605268a1dd53
-  - enabled: 1
-    path: Assets/Scenes/7b.Transition.unity
-    guid: 1671586c49d78ac42a5598ef7caa1276
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/SODDA/Scenes/Prototype.unity
     guid: 1991ab69aac59794493a98d8c770fa4c
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SODDA/Scenes/Setup.unity
     guid: 11afd56eeebc46c4eacc30945316fd0b
+  - enabled: 1
+    path: Assets/SODDA/Scenes/Level04.unity
+    guid: 95c1465b9c9133e48bd7ec7bce5f6e2b
   m_configObjects: {}
