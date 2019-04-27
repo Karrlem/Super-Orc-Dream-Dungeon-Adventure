@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour 
 {
-
+    public Animator anim;
 	public float lookRadius = 10f;
 
 	Transform target;
@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		target = PlayerManager.instance.player.transform;
+        target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
 		//GameObject plyr = GameObject.FindGameObjectWithTag("Player");
 		
@@ -61,5 +61,6 @@ public class EnemyController : MonoBehaviour
             Vector3 position = transform.position;
             agent.SetDestination(position);
      }
+        
  }
 }
