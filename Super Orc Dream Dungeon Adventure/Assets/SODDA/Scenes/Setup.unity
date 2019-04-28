@@ -2073,12 +2073,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865897283}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &874674869 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 858afca6fceaf0d4ab968ed83d2b8f3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1152472989}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &874674870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400016, guid: 858afca6fceaf0d4ab968ed83d2b8f3d,
@@ -4528,12 +4522,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669413444}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65dc08c6895658f47941ce2646a8595e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 874674869}
   lookRadius: 10
 --- !u!195 &1669413447
 NavMeshAgent:
@@ -4542,7 +4535,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669413444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.2
   m_Speed: 5
@@ -5360,6 +5353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8902212977760172760, guid: fd4308acc5172bf41bb342726743c2d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8902212977760172756, guid: fd4308acc5172bf41bb342726743c2d6,
         type: 3}

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour 
 {
-    public Animator anim;
+    static Animator anim;
 	public float lookRadius = 10f;
 
 	Transform target;
@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+        anim = GetComponent<Animator>();
         target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
 		//GameObject plyr = GameObject.FindGameObjectWithTag("Player");
@@ -31,9 +32,11 @@ public class EnemyController : MonoBehaviour
 
 			if(distance <= agent.stoppingDistance)
 			{
+                anim.SetBool("isIdle", false);
 				//attack target
 				//face target
 				FaceTarget();
+                anim.SetBool("isWalking", true);
 
 			}
 		}
@@ -42,14 +45,16 @@ public class EnemyController : MonoBehaviour
 
 	void FaceTarget()
 	{
+        anim.SetBool("isIdle", false);
 		Vector3 direction = (target.position - transform.position).normalized;
 		Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0,direction.z));
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation,Time.deltaTime * 5f);
-	}
+        anim.SetBool("isWalking", true);
+    }
 	
 	void OnDrawGizmosSelected()
 	{
-		Gizmos.color = Color.red;
+        Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, lookRadius);
 	}
 
@@ -57,6 +62,7 @@ public class EnemyController : MonoBehaviour
  {
      if (other.gameObject.tag == "Player")
      {
+            
             //transform.position = Vector3.zero;
             Vector3 position = transform.position;
             agent.SetDestination(position);
