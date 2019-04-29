@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour 
 {
-    static Animator anim;
+    Animator anim;
 	public float lookRadius = 10f;
 
 	Transform target;
@@ -17,9 +17,8 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
-		//GameObject plyr = GameObject.FindGameObjectWithTag("Player");
-		
-		
+        //GameObject plyr = GameObject.FindGameObjectWithTag("Player");
+    
 	}
 
 	void Update()
@@ -29,27 +28,32 @@ public class EnemyController : MonoBehaviour
 		if(distance <= lookRadius)
 		{
 			agent.SetDestination(target.position);
+            anim.SetBool("IsWalking", true);
 
-			if(distance <= agent.stoppingDistance)
+            if (distance <= agent.stoppingDistance)
 			{
-                anim.SetBool("isIdle", false);
+                
 				//attack target
 				//face target
 				FaceTarget();
-                anim.SetBool("isWalking", true);
+                
 
 			}
-		}
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
+        }
 	}
 	
 
 	void FaceTarget()
 	{
-        anim.SetBool("isIdle", false);
+        
 		Vector3 direction = (target.position - transform.position).normalized;
 		Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0,direction.z));
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation,Time.deltaTime * 5f);
-        anim.SetBool("isWalking", true);
+        
     }
 	
 	void OnDrawGizmosSelected()
@@ -62,7 +66,6 @@ public class EnemyController : MonoBehaviour
  {
      if (other.gameObject.tag == "Player")
      {
-            
             //transform.position = Vector3.zero;
             Vector3 position = transform.position;
             agent.SetDestination(position);
