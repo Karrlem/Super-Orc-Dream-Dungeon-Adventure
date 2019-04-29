@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     //private float minRotation = -90;
     //private float maxRotation = 90;
 
-    private Animator m_animator;
+    public Animator anim;
     public Transform pivot;
     public float rotateSpeed;
 
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        //m_animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = moveDirection.y + Physics.gravity.y * gravityScale *Time.deltaTime;
         controller.Move(moveDirection* Time.deltaTime);
 
+        //anim.SetBool("IsGrounded", controller.isGrounded);
+        //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Vertical") + Mathf.Abs(Input.GetAxis("Horizontal"))));
         //Move the player in different directions
         if(Input.GetAxis("Horizontal") !=0 || Input.GetAxis("Vertical") != 0)
         {
