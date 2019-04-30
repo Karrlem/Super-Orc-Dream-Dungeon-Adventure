@@ -39,15 +39,15 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+        {
         //moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
 
         if (knockBackCounter <= 0)
         { 
             float yStore = moveDirection.y;
-        moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
-        moveDirection = moveDirection.normalized * moveSpeed;
-        moveDirection.y = yStore;
+            moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
+            moveDirection = moveDirection.normalized * moveSpeed;
+            moveDirection.y = yStore;
 
         if (controller.isGrounded)
         {
@@ -66,8 +66,6 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = moveDirection.y + Physics.gravity.y * gravityScale *Time.deltaTime;
         controller.Move(moveDirection* Time.deltaTime);
 
-        //anim.SetBool("IsGrounded", controller.isGrounded);
-        //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Vertical") + Mathf.Abs(Input.GetAxis("Horizontal"))));
         //Move the player in different directions
         if(Input.GetAxis("Horizontal") !=0 || Input.GetAxis("Vertical") != 0)
         {
@@ -75,13 +73,19 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
-        
 
+        anim.SetBool("isGrounded", controller.isGrounded);
+        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Vertical") + Mathf.Abs(Input.GetAxis("Horizontal"))));
         //transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
 
         //Vector3 currentRotation = transform.localRotation.eulerAngles;
         //currentRotation.x = Mathf.Clamp(currentRotation.x, minRotation, maxRotation);
-       // transform.localRotation = Quaternion.Euler(currentRotation);
+        // transform.localRotation = Quaternion.Euler(currentRotation);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("attack");
+        }
     }
 
     //player can push objects
@@ -111,6 +115,7 @@ public class PlayerController : MonoBehaviour
         // Apply the push
         body.velocity = pushDir * pushPower;
     }
+
 
     public void Knockback(Vector3 direction)
     {
