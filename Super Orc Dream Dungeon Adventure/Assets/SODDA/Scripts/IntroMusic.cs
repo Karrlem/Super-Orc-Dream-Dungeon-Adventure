@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGSoundScript : MonoBehaviour
+public class IntroMusic : MonoBehaviour
 {
 
     // Use this for initialization
@@ -12,8 +12,8 @@ public class BGSoundScript : MonoBehaviour
     }
 
     //Play Global
-    private static BGSoundScript instance = null;
-    public static BGSoundScript Instance
+    private static IntroMusic instance = null;
+    public static IntroMusic Instance
     {
         get { return instance; }
     }
@@ -40,4 +40,3 @@ public class BGSoundScript : MonoBehaviour
 
     }
 }
-
