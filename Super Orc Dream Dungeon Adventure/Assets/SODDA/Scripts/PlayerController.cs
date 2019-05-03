@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed;
 
     public GameObject playerModel;
-    public GameObject Death;
 
     public float knockBackForce;
     public float knockBackTime;

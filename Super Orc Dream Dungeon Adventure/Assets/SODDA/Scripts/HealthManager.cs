@@ -19,6 +19,7 @@ public class HealthManager : MonoBehaviour
     private bool isRespawning;
     private Vector3 respawnPoint;
     public float respawnLength;
+    public GameObject deathEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +90,8 @@ public class HealthManager : MonoBehaviour
     {
         isRespawning = true;
         thePlayer.gameObject.SetActive(false);
+        Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+        Destroy(deathEffect, 2f);
 
         yield return new WaitForSeconds(respawnLength);
         isRespawning = false;
@@ -99,7 +102,6 @@ public class HealthManager : MonoBehaviour
 
         invincibilityCounter = invincibilityLength;
         playerRenderer.enabled = false;
-
         flashCounter = flashlegth;
     }
 
