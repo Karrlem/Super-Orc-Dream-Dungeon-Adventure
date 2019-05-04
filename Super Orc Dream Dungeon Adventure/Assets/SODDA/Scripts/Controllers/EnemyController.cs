@@ -14,8 +14,12 @@ public class EnemyController : MonoBehaviour
     public GameObject deathEffect;
     public GameObject thisEnemy;
 
-	// Use this for initialization
-	void Start () 
+    //public float knockBackForce;
+    //public float knockBackTime;
+    //private float knockBackCounter;
+
+    // Use this for initialization
+    void Start () 
 	{
         anim = GetComponent<Animator>();
         target = PlayerManager.instance.player.transform;

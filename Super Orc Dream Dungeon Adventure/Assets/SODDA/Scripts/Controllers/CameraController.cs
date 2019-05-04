@@ -18,8 +18,9 @@ public class CameraController : MonoBehaviour
          offset = target.position - transform.position;
         }
         pivot.transform.parent = null;
+
         //Hides the mouse cursor, press Escape to get back.
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void LateUpdate()
