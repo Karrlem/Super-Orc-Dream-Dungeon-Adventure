@@ -91,7 +91,6 @@ public class HealthManager : MonoBehaviour
         isRespawning = true;
         thePlayer.gameObject.SetActive(false);
         Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
-        Destroy(deathEffect, 2f);
 
         yield return new WaitForSeconds(respawnLength);
         isRespawning = false;
