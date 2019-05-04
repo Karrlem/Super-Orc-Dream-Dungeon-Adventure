@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
+    public Slider healthBar;
+    public Text hP;
+
     public int maxHealth;
     public int currentHealth;
 
@@ -26,6 +30,7 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth = maxHealth;
 
+        healthBar.value = CalculateHealth();
         //thePlayer = FindObjectOfType<PlayerController>();
 
         respawnPoint = thePlayer.transform.position;
@@ -34,6 +39,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hP.text = "HP: " + currentHealth;
         if(invincibilityCounter > 0)
         {
             invincibilityCounter -= Time.deltaTime;
@@ -58,6 +64,7 @@ public class HealthManager : MonoBehaviour
 
        
             currentHealth -= damage;
+            healthBar.value = CalculateHealth();
 
             if(currentHealth <= 0)
             {
@@ -95,6 +102,7 @@ public class HealthManager : MonoBehaviour
         yield return new WaitForSeconds(respawnLength);
         isRespawning = false;
 
+
         thePlayer.gameObject.SetActive(true);
         thePlayer.transform.position = respawnPoint;
         currentHealth = maxHealth;
@@ -104,6 +112,10 @@ public class HealthManager : MonoBehaviour
         flashCounter = flashlegth;
     }
 
+    float CalculateHealth()
+    {
+        return currentHealth / maxHealth;
+    }
     public void HealPlayer(int healAmount)
     {
         //makes sure the health doest go above max limit.

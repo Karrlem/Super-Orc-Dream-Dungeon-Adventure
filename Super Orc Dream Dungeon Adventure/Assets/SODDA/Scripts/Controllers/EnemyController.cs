@@ -5,11 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour 
 {
+    public int health;
     Animator anim;
 	public float lookRadius = 10f;
 
 	Transform target;
 	NavMeshAgent agent;
+    public GameObject deathEffect;
+    public GameObject thisEnemy;
 
 	// Use this for initialization
 	void Start () 
@@ -44,6 +47,12 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetBool("IsWalking", false);
         }
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(deathEffect, thisEnemy.transform.position, thisEnemy.transform.rotation);
+        }
 	}
 	
 
@@ -72,4 +81,9 @@ public class EnemyController : MonoBehaviour
      }
         
  }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("damage taken !");
+    }
 }

@@ -25,9 +25,15 @@ public class PlayerController : MonoBehaviour
 
 
     private Vector3 moveDirection;
+
+    public Transform attackPos;
+    public LayerMask whatIsEnemies;
+    public float attackRange;
+    public int damage;
   
 
     float pushPower = 2.0f;
+    private object physics3D;
 
     // Start is called before the first frame update
     void Start()
@@ -83,9 +89,22 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, whatIsEnemies);
+            for(int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(damage);
+            }
             anim.SetTrigger("attack");
 
+
         }
+        
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     //player can push objects
