@@ -1076,6 +1076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9163b534314303b458e049021bb6092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  hP: {fileID: 0}
   maxHealth: 1
   currentHealth: 0
   thePlayer: {fileID: 0}
@@ -1083,6 +1085,7 @@ MonoBehaviour:
   playerRenderer: {fileID: 0}
   flashlegth: 0.1
   respawnLength: 2
+  deathEffect: {fileID: 0}
 --- !u!114 &1023940660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,7 +1607,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1445581281}
   m_OnClick:
     m_PersistentCalls:

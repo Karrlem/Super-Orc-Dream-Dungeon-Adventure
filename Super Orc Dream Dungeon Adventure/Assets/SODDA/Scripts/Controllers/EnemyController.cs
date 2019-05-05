@@ -9,9 +9,14 @@ public class EnemyController : MonoBehaviour
     Animator anim;
 	public float lookRadius = 10f;
 
+    private float dazedTime;
+    public float startDazedTime;
+    public float speed;
+
 	Transform target;
 	NavMeshAgent agent;
     public GameObject deathEffect;
+    public GameObject bloodEffect;
     public GameObject thisEnemy;
 
     //public float knockBackForce;
@@ -21,6 +26,7 @@ public class EnemyController : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
+        //speed = GetComponent<NavMeshAgent>().speed;
         anim = GetComponent<Animator>();
         target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
@@ -32,6 +38,16 @@ public class EnemyController : MonoBehaviour
 	{
 		float distance = Vector3.Distance(target.position, transform.position);
 
+        if(dazedTime <= 0)
+        {
+            agent.speed = 3f;
+        }
+        else
+        {
+            agent.speed = 0f;
+            dazedTime -= Time.deltaTime;
+        }
+
 		if(distance <= lookRadius)
 		{
 			agent.SetDestination(target.position);
@@ -40,15 +56,16 @@ public class EnemyController : MonoBehaviour
             if (distance <= agent.stoppingDistance)
 			{
                 
-				//attack target
-				//face target
-				FaceTarget();
+                //attack target
+                //face target
+                FaceTarget();
                 
 
 			}
         }
         else
         {
+            agent.velocity = Vector3.zero;
             anim.SetBool("IsWalking", false);
         }
 
@@ -87,6 +104,8 @@ public class EnemyController : MonoBehaviour
  }
     public void TakeDamage(int damage)
     {
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        dazedTime = startDazedTime;
         health -= damage;
         Debug.Log("damage taken !");
     }
