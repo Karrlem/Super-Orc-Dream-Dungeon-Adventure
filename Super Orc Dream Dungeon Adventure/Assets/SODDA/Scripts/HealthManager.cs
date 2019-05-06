@@ -125,4 +125,13 @@ public class HealthManager : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
+
+    /*void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Pit")
+        {
+            thePlayer.currentHealth = 0;
+        }
+
+    }*/
 }

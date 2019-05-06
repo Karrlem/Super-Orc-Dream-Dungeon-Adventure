@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         //currentRotation.x = Mathf.Clamp(currentRotation.x, minRotation, maxRotation);
         // transform.localRotation = Quaternion.Euler(currentRotation);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, whatIsEnemies);
             for(int i = 0; i < enemiesToDamage.Length; i++)
@@ -146,4 +146,12 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = knockBackForce;
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Pit")
+        {
+            GetComponent<HealthManager>().currentHealth -= 1;
+        }
+
+    }
 }

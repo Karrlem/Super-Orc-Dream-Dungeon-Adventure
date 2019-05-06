@@ -9,6 +9,7 @@ TagManager:
   - Key
   - Fire
   - Sword
+  - Pit
   layers:
   - Default
   - TransparentFX
