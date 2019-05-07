@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     float pushPower = 2.0f;
     private object physics3D;
 
+    public AudioSource attackSFX;
+    public AudioSource enemyHitSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,10 +92,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            //Audio goes here
+            attackSFX.Play();
             Collider[] enemiesToDamage = Physics.OverlapSphere(attackPos.position, attackRange, whatIsEnemies);
             for(int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(damage);
+                enemyHitSFX.Play();
             }
             anim.SetTrigger("attack");
 

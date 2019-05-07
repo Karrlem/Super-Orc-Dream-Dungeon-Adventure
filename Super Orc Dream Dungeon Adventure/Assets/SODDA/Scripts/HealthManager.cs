@@ -25,12 +25,14 @@ public class HealthManager : MonoBehaviour
     public float respawnLength;
     public GameObject deathEffect;
 
+    public GameObject playerHit;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
 
-        healthBar.value = CalculateHealth();
+        //healthBar.value = CalculateHealth();
         //thePlayer = FindObjectOfType<PlayerController>();
 
         respawnPoint = thePlayer.transform.position;
@@ -62,9 +64,9 @@ public class HealthManager : MonoBehaviour
         if(invincibilityCounter <= 0)
         {
 
-       
+            Instantiate(playerHit, thePlayer.transform.position, thePlayer.transform.rotation);
             currentHealth -= damage;
-            healthBar.value = CalculateHealth();
+            //healthBar.value = CalculateHealth();
 
             if(currentHealth <= 0)
             {

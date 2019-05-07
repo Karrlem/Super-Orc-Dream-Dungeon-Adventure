@@ -19,6 +19,9 @@ public class EnemyController : MonoBehaviour
     public GameObject bloodEffect;
     public GameObject thisEnemy;
 
+    public GameObject enemyDeath;
+
+
     //public float knockBackForce;
     //public float knockBackTime;
     //private float knockBackCounter;
@@ -72,6 +75,7 @@ public class EnemyController : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            Instantiate(enemyDeath,thisEnemy.transform.position, thisEnemy.transform.rotation);
             Instantiate(deathEffect, thisEnemy.transform.position, thisEnemy.transform.rotation);
         }
 	}
