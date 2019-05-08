@@ -10382,7 +10382,8 @@ MonoBehaviour:
   respawnLength: 2
   deathEffect: {fileID: 2923432272309000315, guid: 915ffa4ac9b308d44ae4c1d4d3400c20,
     type: 3}
-  playerHit: {fileID: 0}
+  playerHit: {fileID: 2810525565200683956, guid: 9ac8753626f9e2743b889f09a111c854,
+    type: 3}
 --- !u!114 &1906035930
 MonoBehaviour:
   m_ObjectHideFlags: 0
