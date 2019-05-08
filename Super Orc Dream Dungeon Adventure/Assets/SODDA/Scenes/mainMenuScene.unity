@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 589907527}
   - component: {fileID: 589907529}
   - component: {fileID: 589907528}
+  - component: {fileID: 589907530}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -601,6 +602,20 @@ MonoBehaviour:
   tranisitionAnim: {fileID: 2128323063}
   sceneName: Setup
   enter: 1
+--- !u!114 &589907530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589907526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f22b583ca39ed4e9cd6c1dc09c95e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tranisitionAnim: {fileID: 2128323063}
+  sceneName: mainMenuScene
 --- !u!1 &637949364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1101,7 @@ MonoBehaviour:
   flashlegth: 0.1
   respawnLength: 2
   deathEffect: {fileID: 0}
+  playerHit: {fileID: 0}
 --- !u!114 &1023940660
 MonoBehaviour:
   m_ObjectHideFlags: 0
